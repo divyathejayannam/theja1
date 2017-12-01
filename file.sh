@@ -1,10 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
-cd /var/www
+# Calling one function from another
+number_one () {
+   echo "This is the first function speaking..."
+   number_two
+}
 
-for FILE in *.html
-do
-  echo "copying $FILE"
-  cp $FILE /var/www-just-html
-  done
-  
+number_two () {
+   echo "This is now the second function speaking..."
+}
+
+# Calling function one.
+number_one
